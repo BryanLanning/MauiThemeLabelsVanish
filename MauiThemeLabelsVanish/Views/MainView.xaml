@@ -17,6 +17,19 @@
                 Style="{DynamicResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
+            <Entry Text="Entry Control" />
+
+            <HorizontalStackLayout VerticalOptions="Center">
+                <CheckBox IsChecked="True" VerticalOptions="Center" />
+                <Label Text="Label control for Checkbox control" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <ActivityIndicator IsVisible="True" IsEnabled="True" IsRunning="True" />
+
+            <IndicatorView Count="10" HorizontalOptions="Center" />
+
+            <Border HeightRequest="42" HorizontalOptions="Fill" />
+
             <Button
                 Text="Go to ThemeView" 
                 Command="{Binding GoToThemeViewCommand}"
