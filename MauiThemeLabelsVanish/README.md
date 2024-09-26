@@ -22,7 +22,7 @@ Demonstrate the issue where changing the Theme works for sub-pages, but the Labe
 1. Add `CommunityToolkit.Maui` and `CommunityToolkit.MVVM` NuGet packages.
 1. Add the INavigationService and MauiNavigationService as seen in the [Navigation](https://learn.microsoft.com/en-us/dotnet/architecture/maui/navigation) section of Microsoft Learn's [Enterprise Application Patterns Using .NET MAUI](https://learn.microsoft.com/en-us/dotnet/architecture/maui/).
 1. Add GlobalUsings.
-1. Add a dummy LoginView, a MainView with several types of controls, and a ThemeSelectionView to change the theme.  ViewModels, dependency-injection registration in MauiProgram and route registration in AppShell.xaml.cs as well.
+1. Add a MainView with several types of controls, and a ThemeSelectionView to change the theme.  ViewModels, dependency-injection registration in MauiProgram and route registration in AppShell.xaml.cs as well.
 1. Add a ThemeService and Theme dictionaries for Red/Blue themes.
 1. Implement Theme switching as seen in Microsoft's Learn documentation for .NET MAUI 8 at [Theming&rarr;Respond To system theme changes](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/system-theme-changes?view=net-maui-8.0).
 1. Add WeakMessage registration to AppShell to listen for changes to the theme.
