@@ -9,21 +9,24 @@ public class MauiNavigationService : INavigationService
 
     public async Task InitializeAsync()
     {
-        await NavigateToAsync("Login");
+        await NavigateToAsync(typeof(MainView).FullName!);
     }
 
-    public Task NavigateToAsync(string route, IDictionary<string, object> routeParameters = null)
+    public Task NavigateToAsync(string route, IDictionary<string, object>? routeParameters = null)
     {
-        throw new NotImplementedException();
+        if (routeParameters == null)
+            return Shell.Current.GoToAsync(route);
+        else
+            return Shell.Current.GoToAsync(route, routeParameters);
     }
 
     public Task PopAsync()
     {
-        throw new NotImplementedException();
+        return Shell.Current.GoToAsync("..");
     }
 
     public Task PopToRootAsync()
     {
-        throw new NotImplementedException();
+        return Shell.Current.Navigation.PopToRootAsync();
     }
 }

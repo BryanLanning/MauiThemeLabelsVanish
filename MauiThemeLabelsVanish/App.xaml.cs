@@ -1,18 +1,28 @@
-﻿using MauiThemeLabelsVanish.Services;
+﻿using CommunityToolkit.Mvvm.Messaging;
 
-namespace MauiThemeLabelsVanish
+namespace MauiThemeLabelsVanish;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    private readonly INavigationService navigationService;
+
+    public App(INavigationService navigationService)
     {
-        private readonly INavigationService navigationService;
+        this.navigationService = navigationService;
+        
+        InitializeComponent();
 
-        public App(INavigationService navigationService)
+        MainPage = new AppShell(navigationService);
+
+        // Register what happens when the ThemeChangedMessage is received.
+        WeakReferenceMessenger.Default.Register<ThemeChangedMessage>(this, (r, m) =>
         {
-            this.navigationService = navigationService;
-            
-            InitializeComponent();
+            Enum.TryParse(m.Value, out ThemeNames messageTheme);
+            ThemeService.LoadTheme(messageTheme);
+        });
 
-            MainPage = new AppShell(navigationService);
-        }
+
+        ThemeService.LoadTheme(ThemeNames.Default);
+
     }
 }

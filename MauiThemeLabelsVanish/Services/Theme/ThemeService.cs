@@ -2,6 +2,7 @@
 
 public class ThemeService
 {
+
     public static void LoadTheme(ThemeNames theme)
     {
         if (Application.Current == null)

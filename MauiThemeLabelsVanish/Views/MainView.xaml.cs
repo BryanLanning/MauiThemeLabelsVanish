@@ -1,6 +1,6 @@
 namespace MauiThemeLabelsVanish.Views;
 
-public partial class MainView : ContentPage
+public partial class MainView : ContentPageBase
 {
     private readonly MainViewModel viewModel;
     public MainView(MainViewModel viewModel)

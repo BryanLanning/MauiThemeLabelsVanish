@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiThemeLabelsVanish.Views.ThemeSelectionView"
-             Title="ThemeSelectionView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+<views:ContentPageBase 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MauiThemeLabelsVanish.Views"
+    xmlns:viewmodels="clr-namespace:MauiThemeLabelsVanish.ViewModels"
+    x:Class="MauiThemeLabelsVanish.Views.ThemeSelectionView"
+    x:DataType="viewmodels:ThemeSelectionViewModel"
+    Title="ThemeSelectionView">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label 
+                Text="This Label will change color when the Theme is toggled. It will stay visible and will still be visible when navigating away and then back to this View."
+                LineBreakMode="WordWrap"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Style="{DynamicResource Headline}"/>
+            
+            <Button Text="Toggle Theme" Command="{Binding ToggleThemeCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</views:ContentPageBase>

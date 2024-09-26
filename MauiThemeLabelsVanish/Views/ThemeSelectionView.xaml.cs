@@ -1,9 +1,12 @@
 namespace MauiThemeLabelsVanish.Views;
 
-public partial class ThemeSelectionView : ContentPage
+public partial class ThemeSelectionView : ContentPageBase
 {
-	public ThemeSelectionView()
+    private readonly ThemeSelectionViewModel viewModel;
+
+    public ThemeSelectionView(ThemeSelectionViewModel viewModel)
 	{
-		InitializeComponent();
-	}
+        BindingContext = this.viewModel = viewModel;
+        InitializeComponent();
+    }
 }
