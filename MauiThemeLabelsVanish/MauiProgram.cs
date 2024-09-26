@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Maui;
-using MauiThemeLabelsVanish.Services;
+using MauiThemeLabelsVanish.Services.Navigation;
 using MauiThemeLabelsVanish.ViewModels;
 using MauiThemeLabelsVanish.Views;
 using Microsoft.Extensions.Logging;

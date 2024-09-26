@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
+using MauiThemeLabelsVanish.Services.Navigation;
+using MauiThemeLabelsVanish.Services.Theme;
 
 namespace MauiThemeLabelsVanish;
 

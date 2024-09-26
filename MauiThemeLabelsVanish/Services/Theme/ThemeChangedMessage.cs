@@ -1,4 +1,6 @@
-﻿namespace MauiThemeLabelsVanish.Services.Theme;
+﻿using CommunityToolkit.Mvvm.Messaging.Messages;
+
+namespace MauiThemeLabelsVanish.Services.Theme;
 
 public class ThemeChangedMessage : ValueChangedMessage<string>
 {

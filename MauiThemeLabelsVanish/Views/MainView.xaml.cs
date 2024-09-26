@@ -1,3 +1,5 @@
+using MauiThemeLabelsVanish.ViewModels;
+
 namespace MauiThemeLabelsVanish.Views;
 
 public partial class MainView : ContentPageBase

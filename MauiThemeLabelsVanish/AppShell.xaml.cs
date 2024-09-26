@@ -1,4 +1,4 @@
-﻿using MauiThemeLabelsVanish.Services;
+﻿using MauiThemeLabelsVanish.Services.Navigation;
 using MauiThemeLabelsVanish.Views;
 
 namespace MauiThemeLabelsVanish;

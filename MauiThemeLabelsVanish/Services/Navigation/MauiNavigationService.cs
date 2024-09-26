@@ -1,4 +1,6 @@
-﻿namespace MauiThemeLabelsVanish.Services.Navigation;
+﻿using MauiThemeLabelsVanish.Views;
+
+namespace MauiThemeLabelsVanish.Services.Navigation;
 
 public class MauiNavigationService : INavigationService
 {

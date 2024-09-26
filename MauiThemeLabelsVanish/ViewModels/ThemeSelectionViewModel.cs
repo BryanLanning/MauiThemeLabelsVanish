@@ -1,4 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using MauiThemeLabelsVanish.Services.Navigation;
+using MauiThemeLabelsVanish.Services.Theme;
 
 namespace MauiThemeLabelsVanish.ViewModels;
 

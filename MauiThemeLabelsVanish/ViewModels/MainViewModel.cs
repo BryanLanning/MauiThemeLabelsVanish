@@ -1,4 +1,9 @@
-﻿namespace MauiThemeLabelsVanish.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using MauiThemeLabelsVanish.Services.Navigation;
+using MauiThemeLabelsVanish.Views;
+
+namespace MauiThemeLabelsVanish.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
@@ -12,6 +17,6 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private async Task GoToThemeView()
     {
-        await navigationService.NavigateToAsync(typeof(ThemeSelectionView)!.FullName);
+        await navigationService.NavigateToAsync(typeof(ThemeSelectionView).FullName!);
     }
 }
