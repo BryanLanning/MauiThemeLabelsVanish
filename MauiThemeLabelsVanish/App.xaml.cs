@@ -1,12 +1,18 @@
-﻿namespace MauiThemeLabelsVanish
+﻿using MauiThemeLabelsVanish.Services;
+
+namespace MauiThemeLabelsVanish
 {
     public partial class App : Application
     {
-        public App()
+        private readonly INavigationService navigationService;
+
+        public App(INavigationService navigationService)
         {
+            this.navigationService = navigationService;
+            
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new AppShell(navigationService);
         }
     }
 }

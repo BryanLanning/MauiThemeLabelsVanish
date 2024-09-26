@@ -1,25 +1,54 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using MauiThemeLabelsVanish.Services;
+using MauiThemeLabelsVanish.ViewModels;
+using MauiThemeLabelsVanish.Views;
+using Microsoft.Extensions.Logging;
 
-namespace MauiThemeLabelsVanish
+namespace MauiThemeLabelsVanish;
+
+public static class MauiProgram
 {
-    public static class MauiProgram
+    public static MauiApp CreateMauiApp()
     {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+        var builder = MauiApp.CreateBuilder();
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+            })
+            .RegisterAppServices()
+            .RegisterViewModels()
+            .RegisterViews();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
-        }
+        return builder.Build();
+    }
+
+
+    public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddSingleton<INavigationService, MauiNavigationService>();
+
+        return mauiAppBuilder;
+    }
+    public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddTransient<MainViewModel>();
+        mauiAppBuilder.Services.AddTransient<ThemeSelectionViewModel>();
+
+        return mauiAppBuilder;
+    }
+    public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
+    {
+        mauiAppBuilder.Services.AddTransient<MainView>();
+        mauiAppBuilder.Services.AddTransient<ThemeSelectionView>();
+
+        return mauiAppBuilder;
     }
 }

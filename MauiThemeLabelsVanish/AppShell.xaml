@@ -3,13 +3,13 @@
     x:Class="MauiThemeLabelsVanish.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiThemeLabelsVanish"
+    xmlns:views="clr-namespace:MauiThemeLabelsVanish.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="MauiThemeLabelsVanish">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate views:ThemeSelectionView}"
+        Route="MainView" />
 
 </Shell>
