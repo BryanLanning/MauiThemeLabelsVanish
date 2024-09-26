@@ -1,6 +1,8 @@
 # Purpose: 
 Demonstrate the issue where changing the Theme works for sub-pages, but the Label controls on the Shell's main page disappear after the theme is changed.
 
+Reference: dotnet/maui/issues/[24950](https://github.com/dotnet/maui/issues/24950)
+
 # Steps to recreate:
 1. Create a new MAUI project in Visual Studio from the template.
 1. Disable the iOS and MacCatalyst output targets as they're irrelevant for this example.
